@@ -16,6 +16,10 @@ import { useThree, useFrame } from "@react-three/fiber";
 
 import { Treex } from "./proctree.js";
 import twig from "../../public/img/twig-1.png";
+import farmland from "../../public/img/Farmland.jpg";
+import { Text, useTexture } from "@react-three/drei";
+import { RGBA_ASTC_12x12_Format } from "three";
+
 
 /*TREE: */
 let configRaw = {
@@ -105,6 +109,7 @@ const Tree = ({ position }) => {
 	// scene.add(treeGroup);
 	oldTreeGroup = treeGroup;
 	const numVerts = tree.verts.length + tree.vertsTwig.length;
+    const textureFarmland = useTexture(farmland) 
 	// return treeGroup;
 	return (
 		<group ref={ref} position={position} args={[config.seed]}>
@@ -113,6 +118,13 @@ const Tree = ({ position }) => {
 			{/* <bufferGeometry attach="geometry" geometry={twigGeometry} /> */}
 			{/* <primitive key={0} object={new THREE.Mesh(treeGeometry, material)} /> */}
 			{/* <primitive key={1} object={new THREE.Mesh(twigGeometry, material)} /> */}
+            <mesh> 
+                <boxBufferGeometry args={[2,0,2]} />
+                <meshBasicMaterial map={textureFarmland}/>
+            </mesh>
+            <Text color="black" anchorX="center" anchorY="middle">
+                hello world!
+            </Text>
 		</group>
 	);
 };
