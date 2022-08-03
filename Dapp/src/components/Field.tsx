@@ -35,13 +35,14 @@ const trees: IDetails[] = [
 ]
 
 const Field = () => {
-    return <div>
+    return <>
         {
-            trees.map((tree: IDetails) => {
-                return <Tree {...tree}/>
+            trees.map((tree: IDetails, index: number) => {
+                // return <Tree {...tree}/>
+                return <Tree key={index} position={[0,-2,0]} />
             })
         }
-    </div>
+    </>
 }
 
 export default Field;
