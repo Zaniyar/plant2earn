@@ -16,6 +16,7 @@ function App() {
       }}>
       p2e.
     </h1>
+    <button> Call to Action</button>
 		<Canvas>
 			<ambientLight />
 			<directionalLight color="red" intensity={10} />
