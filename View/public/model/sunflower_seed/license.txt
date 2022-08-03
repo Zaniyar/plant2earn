@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sunflower Seed
+* source:	https://sketchfab.com/3d-models/sunflower-seed-688ac508961b4bf8ab677ec4bf881b63
+* author:	Intelligent Education (https://sketchfab.com/intelligenteducation)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sunflower Seed" (https://sketchfab.com/3d-models/sunflower-seed-688ac508961b4bf8ab677ec4bf881b63) by Intelligent Education (https://sketchfab.com/intelligenteducation) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
