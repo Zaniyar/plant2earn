@@ -1,23 +1,55 @@
-import { Camera, Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Camera, Canvas, extend, ReactThreeFiber, useThree } from "@react-three/fiber";
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Field from "./Field";
 import "./Container.css"
+import { PerspectiveCamera } from "three";
 
-const camera = { 
-    fov: 100, 
-    near: 0.1, 
-    far: 1000, 
-    position: [0, 15, 20]
-}
+extend({ OrbitControls });
+
+declare global {
+    namespace JSX {
+      interface IntrinsicElements {
+        orbitControls: ReactThreeFiber.Object3DNode<OrbitControls, typeof OrbitControls>
+      }
+    }
+  }
+
+function Controls() {
+    const {
+      camera,
+      gl: { domElement },
+    } = useThree();
+  
+    return <orbitControls args={[camera, domElement]} />;
+  }
+
+  function CameraHelper() {
+    const camera = new PerspectiveCamera(50, 1, 1, 20);
+    return <group position={[5, 5, 25]}>
+      <cameraHelper args={[camera]} />
+    </group>;
+  }
+  
 
 const Container = () => {
     return <div className="container">
         <div className="">spec</div>
-        <Canvas camera={ camera }>
-            <OrbitControls />
+        <Canvas 
+            camera={{ 
+                position: [0,10,30],
+                left: -2,
+                right: 2,
+                top: 2,
+                bottom: -2,
+                zoom: 25
+            }} 
+            orthographic
+        >
             <ambientLight />
             <directionalLight color="red" intensity={10} />
+            <Controls />
             <Field />
+            <CameraHelper />
         </Canvas>
     </div>
 }
