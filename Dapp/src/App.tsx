@@ -14,9 +14,9 @@ function App() {
       </div>
       {account &&
         <div> <p>Account: {account}</p>
-          <Container />
         </div>
       }
+      <Container />
     </div>
   )
 }
