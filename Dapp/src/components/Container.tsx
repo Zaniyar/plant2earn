@@ -33,7 +33,7 @@ function Controls() {
 
 const Container = () => {
     return <div className="container">
-        <div className="">spec</div>
+        {/* <div className="">spec</div> */}
         <Canvas 
             camera={{ 
                 position: [0,10,30],

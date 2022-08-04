@@ -1,11 +1,23 @@
-import { useState } from 'react'
+import React from 'react'
+import {useEthers } from '@usedapp/core'
+
 import './App.css'
 import Container from './components/Container'
 
 function App() {
+  const { activateBrowserWallet, account } = useEthers()
 
   return (
-    <Container />
+    <div>
+      <div>
+        <button onClick={() => activateBrowserWallet()}>Connect</button>
+      </div>
+      {account &&
+        <div> <p>Account: {account}</p>
+          <Container />
+        </div>
+      }
+    </div>
   )
 }
 

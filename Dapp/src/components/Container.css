@@ -6,11 +6,11 @@
     left: 0;
 }
 
-.info {
+/* .info {
     height: 15%;
-}
+} */
 
 Canvas {
     width: 100%;
-    height: 85%;
+    height: 100%;
 }

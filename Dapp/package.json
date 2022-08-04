@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.19.6",
     "@react-three/fiber": "^8.2.2",
+    "@usedapp/core": "^1.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.143.0"
