@@ -40,6 +40,7 @@ contract GameObject is ERC721Enumerable, IGameObject, Ownable, ReentrancyGuard {
 
     /// @dev Flag to enable/disable timer function for demonstration
     bool private _isTimerActive = true;
+    
     /// @dev Time in seconds when next action(water/harvest/levelUp) on the GameObject is possible
     uint256 private _timeUntilNextAction = 60 * 60 * 6; // 6 hours
     /// @dev Time in seconds when GameObject dies without an action
@@ -79,11 +80,11 @@ contract GameObject is ERC721Enumerable, IGameObject, Ownable, ReentrancyGuard {
         details = _details[tokenId];
     }
 
-    /// @dev Method to get the timer for demonstration
-    /// @return The IsTimerActive boolean
-    function getIsTimerActive() external view returns (bool) {
-        return _isTimerActive;
-    }
+    // /// @dev Method to get the timer for demonstration
+    // /// @return The IsTimerActive boolean
+    // function getIsTimerActive() external view returns (bool) {
+    //     return _isTimerActive;
+    // }
 
     /// @dev Method to enable/disable timer for demonstration
     /// @param active flag to enable disable timer
@@ -91,11 +92,11 @@ contract GameObject is ERC721Enumerable, IGameObject, Ownable, ReentrancyGuard {
         _isTimerActive = active;
     }
 
-    /// @dev Method to get the _timeUntilNextAction
-    /// @return The time until next action in seconds
-    function getTimeUntilNextAction() external view returns (uint256) {
-        return _timeUntilNextAction;
-    }
+    // /// @dev Method to get the _timeUntilNextAction
+    // /// @return The time until next action in seconds
+    // function getTimeUntilNextAction() external view returns (uint256) {
+    //     return _timeUntilNextAction;
+    // }
 
     /// @dev Method to set the _timeUntilNextAction for demonstration
     /// @param timeUntilNextAction in seconds until next action is allowed
