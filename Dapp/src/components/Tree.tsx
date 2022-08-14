@@ -7,6 +7,7 @@ import twig from "../../public/img/twig-1.png";
 import farmland from "../../public/img/Farmland.jpg";
 import { Text, useTexture } from "@react-three/drei";
 import { RGBA_ASTC_12x12_Format } from "three";
+import { IDetails } from "../interfaces/Interfaces.js";
 
 
 /*TREE: */
@@ -23,7 +24,7 @@ let configRaw = {
 	clumpMax: 0.454,
 	clumpMin: 0.404,
 	branchFactor: 2.45,
-	dropAmount: -0.1,
+	dropAmount: -0.05,
 	growAmount: 0.235,
 	sweepAmount: 0.01,
 	maxRadius: 0.139,
@@ -59,7 +60,14 @@ let twigMaterial = new THREE.MeshStandardMaterial({
 
 let oldTreeGroup;
 
-const Tree = ({ position }) => {
+interface ITreeProps extends IDetails {
+	position: any;
+};
+
+const Tree = (props: ITreeProps) => {
+
+	const { position, level, harvestCounter, wateringCounter } = props;
+
 	const ref = useRef();
 
 	useFrame(() => {
@@ -69,8 +77,15 @@ const Tree = ({ position }) => {
 		// config.lengthFalloffPower -= 0.001;
 	});
 
+	const planted = level >= 1;
+	if(planted){
+		config.levels = level + 1;
+		config.trunkLength = 0.8 + level / 3;
+		config.maxRadius = 0.04 + level / 50;
+		config.twigScale = wateringCounter / 10;
+	}
+
 	const tree = new Treex(config);
-	console.log("ja chnaged", config);
 	const treeGeometry = new THREE.BufferGeometry();
 	treeGeometry.setAttribute("position", createFloatAttribute(tree.verts, 3));
 	treeGeometry.setAttribute(
@@ -93,26 +108,20 @@ const Tree = ({ position }) => {
 	treeGroup.add(new THREE.Mesh(treeGeometry, treeMaterial));
 	treeGroup.add(new THREE.Mesh(twigGeometry, twigMaterial));
 	treeGroup.scale.set(0.2, 0.2, 0.2);
-	// scene.remove(oldTreeGroup);
-	// scene.add(treeGroup);
 	oldTreeGroup = treeGroup;
-	const numVerts = tree.verts.length + tree.vertsTwig.length;
     const textureFarmland = useTexture(farmland) 
-	// return treeGroup;
+
 	return (
 		<group ref={ref} position={position} args={[config.seed]}>
-			<mesh geometry={treeGeometry} material={treeMaterial} />
-			<mesh geometry={twigGeometry} material={twigMaterial} />
-			{/* <bufferGeometry attach="geometry" geometry={twigGeometry} /> */}
-			{/* <primitive key={0} object={new THREE.Mesh(treeGeometry, material)} /> */}
-			{/* <primitive key={1} object={new THREE.Mesh(twigGeometry, material)} /> */}
+			{ planted && <mesh geometry={treeGeometry} material={treeMaterial} /> }
+			{ planted && <mesh geometry={twigGeometry} material={twigMaterial} /> }
             <mesh> 
                 <boxBufferGeometry args={[2,0,2]} />
                 <meshBasicMaterial map={textureFarmland}/>
             </mesh>
-            <Text color="black" anchorX="center" anchorY="middle">
+            {/* <Text color="black" anchorX="center" anchorY="middle">
                 hello world!
-            </Text>
+            </Text> */}
 		</group>
 	);
 };

@@ -3,75 +3,75 @@ import Tree from "./Tree";
 
 const trees: IDetails[] = [
     {
-        level: 0,
+        level: 1,
         harvestCounter: 0,
         wateringCounter: 0,
         lastActionTimestamp: Date.now(),
     },
     {
-        level: 0,
+        level: 1,
         harvestCounter: 0,
         wateringCounter: 0,
         lastActionTimestamp: Date.now(),
     },
     {
-        level: 0,
+        level: 1,
+        harvestCounter: 1,
+        wateringCounter: 0,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 2,
         harvestCounter: 0,
         wateringCounter: 0,
         lastActionTimestamp: Date.now(),
     },
     {
-        level: 0,
+        level: 3,
         harvestCounter: 0,
         wateringCounter: 0,
         lastActionTimestamp: Date.now(),
     },
     {
-        level: 0,
+        level: 1,
+        harvestCounter: 0,
+        wateringCounter: 10,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 1,
+        harvestCounter: 0,
+        wateringCounter: 10,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 1,
+        harvestCounter: 0,
+        wateringCounter: 10,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 2,
+        harvestCounter: 0,
+        wateringCounter: 10,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 3,
+        harvestCounter: 0,
+        wateringCounter: 10,
+        lastActionTimestamp: Date.now(),
+    },
+    {
+        level: 5,
         harvestCounter: 0,
         wateringCounter: 0,
         lastActionTimestamp: Date.now(),
     },
     {
-        level: 0,
+        level: 5,
         harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
+        wateringCounter: 10,
         lastActionTimestamp: Date.now(),
     },
     {
@@ -134,7 +134,7 @@ const Field = () => {
                 const yPos = 0;
                 console.log(xPos, yPos, zPos);
                 const position = [xPos, yPos, zPos]
-                return <Tree key={index} position={position} />
+                return <Tree key={index} position={position} {...tree}/>
             })
         }
     </>
