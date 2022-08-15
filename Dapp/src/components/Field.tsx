@@ -1,142 +1,22 @@
 import { IDetails } from "../interfaces";
 import Tree from "./Tree";
+interface IFieldProps {
+    tree: IDetails;
+}
 
-const trees: IDetails[] = [
-    {
-        level: 1,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 1,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 1,
-        harvestCounter: 1,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 2,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 3,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 1,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 1,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 1,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 2,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 3,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 5,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 5,
-        harvestCounter: 0,
-        wateringCounter: 10,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    },
-    {
-        level: 0,
-        harvestCounter: 0,
-        wateringCounter: 0,
-        lastActionTimestamp: Date.now(),
-    }
-]
+const Field = (props: IFieldProps) => {
 
-const Field = () => {
+    const { tree } = props;
+
+    const zPos = 0;
+    const xPos = 0;
+    const yPos = 0;
+    const position = [xPos, yPos, zPos]
+
+
+
     return <>
-        {
-            trees.map((tree: IDetails, index: number) => {
-                // return <Tree {...tree}/>
-                const zPos = Math.floor(index/5)*3;
-                const xPos = (index-5*Math.floor(index/5))*3;
-                const yPos = 0;
-                console.log(xPos, yPos, zPos);
-                const position = [xPos, yPos, zPos]
-                return <Tree key={index} position={position} {...tree}/>
-            })
-        }
+        <Tree position={position} {...tree}/>
     </>
 }
 
