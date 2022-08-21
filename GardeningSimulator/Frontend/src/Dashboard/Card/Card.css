@@ -1,0 +1,127 @@
+.card {
+    position: relative;
+    height: 350px;
+    width: 275px;
+    background: #83b665c4;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.card-rotted {
+    z-index: 0;
+    font-size: xx-large;
+    position: absolute;
+    color: red;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+.card-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-timer-container {
+    position: absolute;
+    top: 0px;
+    margin: 5px;
+    font-size: xx-small;
+}
+
+
+.card-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    height: 270px;
+    width: 180px;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+
+    padding: 5px;
+    background: #E4FF7F;
+    border-radius: 20px;
+}
+
+.card-title {
+    display: inline;
+}
+
+.card-trait-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-trait {
+    background: #92CD28;
+    margin: 2px;
+    padding: 3px 5px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-action {
+    flex: 1;
+    background: #F78914;
+    margin: 2px;
+    padding: 3px 5px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+button.card-action:hover {
+    background: #AD600E;
+}
+
+.card-metadata-sync {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.card-metadata-reload {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: grey;
+    position: absolute;
+    top: 2px;
+    right: 29px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+button.card-metadata-reload:hover {
+    background: darkgray;
+}

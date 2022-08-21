@@ -164,11 +164,7 @@ const Treex = ({ position }) => {
 	treeGroup.add(new THREE.Mesh(treeGeometry, treeMaterial));
 	treeGroup.add(new THREE.Mesh(twigGeometry, twigMaterial));
 	treeGroup.scale.set(0.2, 0.2, 0.2);
-	// scene.remove(oldTreeGroup);
-	// scene.add(treeGroup);
 	oldTreeGroup = treeGroup;
-	const numVerts = tree.verts.length + tree.vertsTwig.length;
-	// return treeGroup;
 	return (
 		<group ref={ref} position={position} args={[config.seed]}>
 			<mesh geometry={treeGeometry} material={treeMaterial} />

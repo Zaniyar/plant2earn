@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.4;
 
 /// @title Plant NFTs Interface
-interface IGameObject {
+interface IPlant{
     /// @notice Details of the Plant that are relevant for playing
-    struct Details {
+    struct Details{
         uint8 level;
         uint8 harvestCounter;
         uint8 wateringCounter;
@@ -17,8 +17,5 @@ interface IGameObject {
     /// @dev Throws if the token ID is not valid.
     /// @param tokenId The ID of the token that represents the Plant
     /// @return details memory
-    function getDetails(uint256 tokenId)
-        external
-        view
-        returns (Details memory details);
+    function getDetails(uint256 tokenId) external view returns (Details memory details);
 }
