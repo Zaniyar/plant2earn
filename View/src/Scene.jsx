@@ -57,7 +57,7 @@ function Scene() {
 	}, []);
 
 	return (
-		<ScrollControls pages={4.4}>
+		<ScrollControls pages={5.7}>
 			<Model
 				fixed={true}
 				url={"../../public/model/sunflower_seed/scene.gltf"}
@@ -65,7 +65,7 @@ function Scene() {
 				//width/3.6732 = 2.8
 				position={[width / 5, -8, 0]}
 			/>
-			<Dodecahedron />
+			{/* <Dodecahedron /> */}
 			<Scroll>
 				<Particles />
 				<Objects />

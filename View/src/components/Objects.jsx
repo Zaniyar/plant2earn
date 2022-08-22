@@ -37,10 +37,9 @@ function Objects({camera}) {
       <Item color="orange" position={[-width / 12, -height * 2.25, 0.5]}>
         <coneGeometry args={[0.75, 2.5, 12]} />
       </Item>
-      <Person who="sunnysun" text="Zaniyar Jahany" position={[width / 12, -height * 3.55, 0.5]}></Person>
-      <Person who="bersboy" text="Bersait Bae" position={[width / 6, -height * 3.55, 0.5]}></Person>
-      <Person who="simon" text="Simon Hohl" position={[width /4, -height * 3.55, 0.5]}></Person>
-
+      <Person who="sunnysun" job="Research Associate" text="Zaniyar Jahany" position={[width / 12, -height * 4.7, 0.5]}></Person>
+      {/* <Person who="bersboy" text="Bersait Bae" position={[width / 6, -height * 3.55, 0.5]}></Person> */}
+      <Person who="simon" job="Software Engineer" text="Simon Hohl" rotation={[0,1,0]} position={[width /5, -height * 4.7, 0.5]}></Person>
       {/* <mesh position={[-width / 12, -height * 2.65, 0.5]}>
         <boxBufferGeometry
           attach="geometry"
@@ -60,7 +59,7 @@ function Objects({camera}) {
         console.log([-width / 12, -height * 3.36, 0.5])
       }
       {/* lengthFalloffPower das ändern im config zum baum wachsen.. kleiner wert = grosser baum */}
-      <Treex  position={[-width / 12, -height * 3.8, 0.5]}></Treex>
+      <Treex  position={[-width / 12, -height * 5.1, 0.5]}></Treex>
     </>
   )
 }

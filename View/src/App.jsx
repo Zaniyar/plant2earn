@@ -11,12 +11,11 @@ function App() {
         left: '5vw',
         // transform: 'translateX(-50%)',
         color: '#292828',
-        fontFamily: "Vogue",
+        fontFamily: "VG",
         fontSize: "60pt"
       }}>
       p2e.
     </h1>
-    <button> Call to Action</button>
 		<Canvas>
 			<ambientLight />
 			<directionalLight color="red" intensity={10} />
