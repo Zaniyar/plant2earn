@@ -1,3 +1,5 @@
+# with this project we won the polyogn hackathon - real world value generation with plant2earn and nfts
+
 # plant2earn
 🌱
 # Frontend: 
