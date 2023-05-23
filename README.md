@@ -2,7 +2,7 @@
 
 # plant2earn
 🌱
-# Frontend: 
+## Frontend
 
 $cd View
 
@@ -10,7 +10,7 @@ $npm i
 
 $npm run dev
 
-# Contract address: 
+## Contract address
 
 const CONTRACT_ADDRESS: string = "0x50bc4e435e941354f34fdd9e38271841e7959e51";
 
