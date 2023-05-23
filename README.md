@@ -1,4 +1,4 @@
-# with this project we won a prize on the polygon hackathon - real world value generation with plant2earn and nfts
+### with this project we won a prize on the polygon hackathon - real world value generation with plant2earn and nfts
 
 # plant2earn
 🌱
